@@ -1,0 +1,49 @@
+---
+title: "Document Template"
+author: "Kate Nelson"
+date: "1/24/2022"
+output: 
+ html_document:
+    code_folding: show
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Front Material {.tabset}
+
+Some intro stuff to say. Blah, blah, blah...
+
+`{.tabset}` will automatically place the material under the next level of header (`###`) in a new tab. Cool beans.
+
+### This is my new tab
+
+Say some stuff here. 
+
+Then create a code chunk.
+
+```{r my_first_chunk}
+
+summary(cars) #write some code
+
+```
+
+#### This will create a sub-header in a tab
+
+I can add an image like this.
+
+`<center>![](fixing_problems.png)</center>`
+
+<center>![](fixing_problems.png)</center>
+
+`<center>` is a brute-force way of telling Markdown to start centering some text or an image, `</center>` tells Markdown to stop centering. (This should be familiar to anyone who poked around with html code.) 
+
+
+I can also change code chunk settings to make my documents purtier. There are lots of options. Here are a few.
+
+```{r my_custom_chunk, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center',fig.width=4, fig.height=4}
+
+plot(cars$speed, cars$dist)
+
+```
